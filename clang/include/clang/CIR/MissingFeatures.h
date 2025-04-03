@@ -81,6 +81,7 @@ struct MissingFeatures {
 
   // Clang early optimizations or things defered to LLVM lowering.
   static bool mayHaveIntegerOverflow() { return false; }
+  static bool shouldReverseUnaryCondOnBoolExpr() { return false; }
 
   // Misc
   static bool cxxABI() { return false; }
@@ -109,6 +110,9 @@ struct MissingFeatures {
   static bool cgFPOptionsRAII() { return false; }
   static bool metaDataNode() { return false; }
   static bool fastMathFlags() { return false; }
+  static bool constantFoldsToSimpleInteger() { return false; }
+  static bool incrementProfileCounter() { return false; }
+  static bool insertBuiltinUnpredictable() { return false; }
 
   // Missing types
   static bool dataMemberType() { return false; }
